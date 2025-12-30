@@ -1,8 +1,8 @@
-import {Home, Trophy, PlusCircle, Search, ChartNoAxesCombined, ChevronDown, User2} from "lucide-react";
+import {Home, Trophy, PlusCircle, Search, ChartNoAxesCombined, ChevronDown, User2, Plus, Projector} from "lucide-react";
 import {
     Sidebar,
     SidebarContent, SidebarFooter,
-    SidebarGroup,
+    SidebarGroup, SidebarGroupAction,
     SidebarGroupContent,
     SidebarGroupLabel,
     SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarSeparator
@@ -75,6 +75,30 @@ const AppSidebar = () => {
                             </SidebarMenu>
                         </SidebarGroupContent>
                     </SidebarGroup>
+                    <SidebarGroup>
+                        <SidebarGroupLabel> Projects </SidebarGroupLabel>
+                        <SidebarGroupAction>
+                            <Plus /> <span className={"sr-only"}>Add Projects</span>
+                        </SidebarGroupAction>
+                        <SidebarGroupContent>
+                            <SidebarMenu>
+                                <SidebarMenuItem>
+                                    <SidebarMenuButton asChild>
+                                        <Link href="#">
+                                            <Projector /> See All Projects
+                                        </Link>
+                                    </SidebarMenuButton>
+                                </SidebarMenuItem>
+                                <SidebarMenuItem>
+                                    <SidebarMenuButton asChild>
+                                        <Link href="#">
+                                            <PlusCircle /> Add Project
+                                        </Link>
+                                    </SidebarMenuButton>
+                                </SidebarMenuItem>
+                            </SidebarMenu>
+                        </SidebarGroupContent>
+                    </SidebarGroup>
                 </SidebarContent>
             <SidebarFooter>
                 <SidebarMenu>
@@ -87,7 +111,7 @@ const AppSidebar = () => {
                                    <ChevronDown className="ml-auto" />
                                </SidebarMenuButton>
                            </DropdownMenuTrigger>
-                           <DropdownMenuContent align={"end"}  className="w-[--radix-popper-anchor-width]">
+                           <DropdownMenuContent align={"end"} side={"right"}  className="w-[--radix-popper-anchor-width]">
                                <DropdownMenuItem>
                                    <span>Account</span>
                                </DropdownMenuItem>
